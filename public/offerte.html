@@ -142,7 +142,7 @@
       const formData = new FormData(form);
 
       try {
-        const response = await fetch('http://localhost:3000/submit-offerte', {
+        const response = await fetch('/submit-offerte', {
           method: 'POST',
           body: formData
         });
@@ -160,4 +160,5 @@
 
 </body>
 </html>
+
 
