@@ -1,0 +1,334 @@
+ /* Algemene stijl */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Top bar */
+.top-bar {
+  height: 40px;
+  background-color: #84bfa0;
+}
+
+/* Header en Footer */
+header, footer {
+  background-color: #00796b;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.top-header {
+  background-color: white;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.logo-links {
+  max-height: 80px;
+}
+
+/* Navigatie */
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.nav-menu a:hover {
+  color: #00796b;
+}
+
+/* Titels */
+h1, h2 {
+  color: #00796b;
+}
+
+/* Hoofdfoto container */
+.hoofdfoto-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* Video */
+.hoofdfoto-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Info-blokje op video */
+.info-blokje {
+  position: absolute;
+  bottom: 2%;
+  left: 2%;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  padding: 15px 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  width: 280px;
+  max-width: 90vw;
+  font-size: 15px;
+  z-index: 10;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.info-blokje .titel {
+  color: #2b8a3e;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.info-blokje ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info-blokje li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.info-blokje .icoon {
+  font-size: 16px;
+  margin-right: 8px;
+  color: #2b8a3e;
+}
+
+/* Videotekst rechts onder */
+.videotekst {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  color: white;
+  background-color: rgba(0, 121, 107, 0.8);
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  max-width: 300px;
+  z-index: 10;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Knoppen onder video */
+.knoppen-onder-video {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+  margin: 40px auto;
+  flex-wrap: wrap;
+}
+
+.knop-icon {
+  height: 120px;
+  width: auto;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.knop-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Main content */
+main {
+  padding: 20px;
+}
+
+/* Uitlegsectie */
+.uitleg-sectie {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.uitleg-sectie h2 {
+  color: #00796b;
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+
+.uitleg-intro {
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  font-size: 16px;
+  color: #444;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Uitleg blokken */
+.uitleg-blokken {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.uitleg-blok {
+  width: 250px;
+  text-align: center;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  transition: transform 0.2s;
+}
+
+.uitleg-blok:hover {
+  transform: scale(1.03);
+}
+
+.uitleg-blok img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  cursor: zoom-in;
+  transition: transform 0.2s;
+}
+
+.uitleg-blok h3 {
+  color: #005B9F;
+  margin-top: 15px;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.uitleg-blok p {
+  font-size: 14px;
+  color: #555;
+  margin-top: 8px;
+}
+
+/* Footer */
+.footer {
+  background-color: #00796b;
+  color: white;
+  padding: 40px 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 20px;
+}
+
+.footer-column h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.footer-column p {
+  margin: 6px 0;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #c2f0e4;
+}
+
+/* ✅ Responsive gedrag voor info-blokje en knoppen */
+@media (max-width: 768px) {
+  .hoofdfoto-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hoofdfoto-video {
+    width: 100%;
+    height: auto;
+  }
+
+  .info-blokje {
+    position: static !important;
+    margin-top: 20px;
+    width: 90%;
+    max-width: 320px;
+    background-color: white;
+    left: auto !important;
+    bottom: auto !important;
+  }
+
+  .videotekst {
+    font-size: 16px;
+    max-width: 250px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .nav-menu ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* 🔁 2x2 knoppen onder video */
+  .knoppen-onder-video {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .knoppen-onder-video a {
+    flex: 0 1 calc(50% - 20px);
+    display: flex;
+    justify-content: center;
+  }
+
+  .knop-icon {
+    height: 80px;
+    width: auto;
+  }
+}
