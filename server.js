@@ -3,16 +3,20 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const multer = require('multer');
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Middleware
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public'))); // ✅ serveert je frontend
 
 const upload = multer({ storage: multer.memoryStorage() });
 
+// Nodemailer setup
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -21,6 +25,7 @@ const transporter = nodemailer.createTransport({
   }
 });
 
+// POST route voor offerteformulier
 app.post('/submit-offerte', upload.single('foto'), async (req, res) => {
   const { naam, email, telefoon, bericht } = req.body;
   const foto = req.file;
@@ -58,11 +63,18 @@ app.post('/submit-offerte', upload.single('foto'), async (req, res) => {
     await transporter.sendMail(mailToClient);
     res.status(200).json({ message: 'Offerte verzonden!' });
   } catch (err) {
-    console.error('Mailfout:', err);
+    console.error('❌ Mailfout:', err);
     res.status(500).json({ error: 'Fout bij verzenden van e-mails.' });
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server draait op poort ${PORT}`);
+// Fallback: als iemand / of iets anders opent, geef index.html
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
+
+// Server starten
+app.listen(PORT, () => {
+  console.log(`✅ Server draait op poort ${PORT}`);
+});
+
